@@ -1,0 +1,29 @@
+
+
+<h2>Choisissez une ville</h2>
+
+<p>
+  <label for="city">Ville: </label>
+  <input [(ngModel)]="city" type="text" name="city" id="city" />
+  <button (click)="getWeather()">envoyer</button>
+</p>
+
+  <div class="col-sm12 text-center">
+    <p>Pour la ville de {{city}} :
+    <img *ngIf="icon" src="http://openweathermap.org/img/wn/{{ icon }}@4x.png" alt="weather-icon" /></p>
+    <div *ngIf="main">
+      <p>
+        {{ description }} avec une température de {{ main.temp }}°C pour un ressenti
+        de {{ main.feelsLike }}°C.
+      </p>
+      <p> température minimale :
+        {{main.tempMin}}
+      </p>
+      <p> température maximale :
+        {{main.tempMax}}
+      </p>
+    </div>
+  </div>   
+
+
+

@@ -1,0 +1,90 @@
+
+
+body {
+    color: #404040;
+    font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  input {
+    width: 90%;
+    height: 100%;
+    padding-left: 8px;
+    font-size: x-large;
+  }
+  
+  button {
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 7px 16px;
+    margin: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+  
+  button.marked {
+    background-color: #008CBA;
+  }
+  
+  button.delete {
+    background-color: #f44336;
+  }
+  
+  h1 {
+    font-size: 22px;
+    margin: 0;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 20px 2px;
+  }
+  
+  .sidebar {
+    position: absolute;
+    margin-top:-20rem;
+    margin-left: 65rem;
+    width: 15%;
+    /*height: 100%; */
+    
+    right: 0; 
+    padding-left: 10px;
+    overflow: hidden;
+    border-right: 2px solid rgba(0, 0, 0, .25);
+  }
+
+ 
+  
+  .map {
+    position: absolute; 
+    right: 15%;
+    width: 50%;
+    top: 12rem;
+    bottom: 0; 
+  }
+
+
+  
+  .heading {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    height: 60px;
+    line-height: 60px;
+    padding: 10px;
+  } 
+  
+  .toggle {
+    height: 100%;
+  }
+  
+  .container {
+    margin-top: 12px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }

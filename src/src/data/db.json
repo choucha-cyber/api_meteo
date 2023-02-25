@@ -1,0 +1,109 @@
+{
+  "markers": [
+    {
+      "properties": {
+        "message": "Bonjour",
+        "image": "10d"
+      },
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2902059219654234,
+          48.895086689110656
+        ]
+      },
+      "id": 1
+    },
+    {
+      "properties": {
+        "message": "Bonjour",
+        "image": "10d"
+      },
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3044538162523907,
+          48.89249090997757
+        ]
+      },
+      "id": 2
+    },
+    {
+      "properties": {
+        "message": "Bonjour",
+        "image": "10d"
+      },
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3245381973559063,
+          48.88458988328861
+        ]
+      },
+      "id": 3
+    },
+    {
+      "properties": {
+        "message": "Bonjour",
+        "image": "10d"
+      },
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.2960424087819433,
+          48.881598454545355
+        ]
+      },
+      "id": 4
+    },
+    {
+      "properties": {
+        "message": "Bonjour",
+        "image": "10d"
+      },
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3090886734307787,
+          48.88673457112077
+        ]
+      },
+      "id": 5
+    },
+    {
+      "properties": {
+        "message": "Bonjour",
+        "image": "10d"
+      },
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3179526914723283,
+          48.88835796921444
+        ]
+      },
+      "id": 6
+    },
+    {
+      "properties": {
+        "message": "Bonjour",
+        "image": "10d"
+      },
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3031039823668493,
+          48.88468948743997
+        ]
+      },
+      "id": 7
+    }
+  ]
+}

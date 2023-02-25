@@ -1,0 +1,146 @@
+
+.clock {
+    margin-top: -9rem;
+    background: #ececec;
+    width: 150px;
+    height: 150px;
+    float: left;
+    border-radius: 50%;
+    border: 7px solid #333;
+    position: relative;
+    box-shadow: 0 2vw 4vw -1vw rgba(0,0,0,0.8);
+  }
+  
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ccc;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    z-index: 10;
+    box-shadow: 0 1px 2px -0.5px black;
+  }
+  
+  .hour-hand {
+    position: absolute;
+    z-index: 5;
+    width: 2px;
+    height: 32.5px;
+    background: #333;
+    top: 39.5px;
+    transform-origin: 50% 36px;
+    left: 50%;
+    margin-left: -1px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+  
+  .minute-hand {
+    position: absolute;
+    z-index: 6;
+    width: 2px;
+    height: 50px;
+    background: #666;
+    top: 23px;
+    left: 50%;
+    margin-left: -1px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform-origin: 50% 52.5px;
+  }
+  
+  .second-hand {
+    position: absolute;
+    z-index: 7;
+    width: 1px;
+    height: 60px;
+    background: gold;
+    top: 13px;
+    lefT: 50%;
+    margin-left: -0.5px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform-origin: 50% 62.5px;
+  }
+  
+  span {
+    display: inline-block;
+    position: absolute;
+    color: #333;
+    font-size: 11px;
+    font-family: 'Poiret One';
+    font-weight: 350;
+    z-index: 2;
+  }
+  
+  .h12 {
+    top: 15px;
+    left: 50%;
+    margin-left: -4.5px;
+  }
+  .h3 {
+    top: 70px;
+    right: 15px;
+  }
+  .h6 {
+    bottom: 15px;
+    left: 50%;
+    margin-left: -2.5px;
+  }
+  .h9 {
+    left: 16px;
+    top: 70px;
+  }
+  
+  .diallines {
+    position: absolute;
+    z-index: 2;
+    width: 1px;
+    height: 7.5px;
+    background: #666;
+    left: 50%;
+    margin-left: -0.5px;
+    transform-origin: 50% 125px;
+  }
+  .diallines:nth-of-type(5n) {
+    position: absolute;
+    z-index: 2;
+    width: 2px;
+    height: 12.5px;
+    background: #666;
+    left: 50%;
+    margin-left: -0.5px;
+    transform-origin: 50% 75px;
+  }
+  
+  .info {
+    position: absolute;
+    width: 60px;
+    height: 10px;
+    border-radius: 3.5px;
+    background: #ccc;
+    text-align: center;
+    line-height: 10px;
+    color: #000;
+    font-size: 5.5px;
+    top: 100px;
+    left: 50%;
+    margin-left: -30px;
+    font-family: "Poiret One";
+    font-weight: 700;
+    z-index: 3;
+    letter-spacing: 1.5px;
+    margin-left: -30px;
+    left: 50%;
+  }
+  .date {
+      top: 40px;
+    }
+  .day {
+      top: 100px;
+  }

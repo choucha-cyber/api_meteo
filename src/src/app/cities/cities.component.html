@@ -1,0 +1,42 @@
+<div id="citiesTemplate">
+  <app-clock></app-clock>
+  <div id="formCity"> 
+  
+    <h3>Ajouter une ville </h3>
+  
+      <form [formGroup]="cityForm" (ngSubmit)="onSubmit()">
+    
+        <label for="new-city">Nom ville: </label>
+        <input formControlName="newCity" placeholder="Enter your city" required/>
+    
+        <label for="country">Pays: </label>
+        <input type formControlName="country" placeholder="Enter your country" required/>
+    
+        <button type="submit" [disabled]="cityForm.invalid">Enregistrer</button>
+      <button type="reset" >Effacer</button>
+      </form>
+  </div>
+
+  
+    <app-map-box></app-map-box>
+  
+  
+  <!--  AFFICHAGE LISTE CITIES-->
+  <div id="list">
+  
+    <h3>Liste des villes :</h3>
+  
+      <ul class="cities">
+        <li *ngFor="let city of cities">
+        <a routerLink="/detail/{{city.id}}">
+        <span class="badge">{{city.id}}</span> {{city.cityName}}
+        </a>
+        <button type="button" class="delete" title="delete city"
+        (click)="delete(city)">x</button>
+        </li>
+      </ul>
+  
+  </div>
+  
+</div>
+
