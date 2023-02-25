@@ -1,0 +1,51 @@
+<div id="temperatureTemplate">
+
+    <div id="formTemperature"> 
+    
+    <h3>Enregistrer un relevé de température</h3>
+
+    <form [formGroup]="temperatureForm" (ngSubmit)="onSubmit()">
+        <p>
+            <label for="time">Date: </label>
+            <input id="time" type="date" formControlName="time">
+        </p>
+
+        <p>
+            <label for="city-name">Ville: </label>
+            <input id="city-name" type="text" formControlName="cityName">
+        </p>
+
+        <p>
+            <label for="temperature">Temperature: </label>
+            <span></span>
+        <!--<input id="temperature" type="text" formControlName="value" value="{{value}}">-->
+        </p>       
+  
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+
+    </form>
+    </div>
+
+    <div id="listTemp">
+
+        <h3>Liste températures par ville :</h3>
+    
+            <ul class="temperature">
+                <li *ngFor="let temperature of temperatures">
+                    <!--<a routerLink="/detail/{{temperature.id}}">
+                        <span>{{temperature.city.cityName}} : {{temperature.value}} </span>
+                    </a>-->
+                    <!--  <span class="badge">{{temperature.id}}</span> {{temperature.city}} : {{temperature.value}}
+                    </a>
+                    <button type="button" class="delete" title="delete city"
+                    (click)="delete(temperature)">x</button> -->
+                </li>
+            </ul>
+    
+    </div>
+    <!--componenet map-box-->
+
+  
+  </div>
