@@ -85,10 +85,10 @@ public class Marker {
 		this.img = img;
 	}
 
-	public void getCoords(Double lat, Double lon) {
-		setLatitute(lat);
-		setLongitude(lon);
-		
-	}
+//	public void getCoords(Double lat, Double lon) {
+//		setLatitute(lat);
+//		setLongitude(lon);
+//		
+//	}
 	
 }
