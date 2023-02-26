@@ -1,8 +1,9 @@
 export interface IMarker{
     id?:number;
-    latitute?:number;
+    latitude?:number;
     img?:string
-    longitude?:number
+    longitude?:number,
+    message?:string
 }
 
 export class Marker implements IMarker{
@@ -10,7 +11,8 @@ export class Marker implements IMarker{
         public id?:number,
         public latitute?:number,
         public img?:string,
-        public longitude?:number
+        public longitude?:number,
+        public message?:string
 
         ){}
 }

@@ -8,6 +8,7 @@ export const environment = {
   accessToken:'pk.eyJ1IjoiYmphY2syMjE4IiwiYSI6ImNsZWgwZHBrdzE1eWIzcG95dHo0YXptcGIifQ.GdQKzZ0tSCIKX-XB93utvw',
   key:"8118ed6ee68db2debfaaa5a44c832918",
   url:"http://localhost:8080/api/"
+ 
 };
 
 /*

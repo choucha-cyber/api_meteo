@@ -54,5 +54,13 @@ URL_MAR=environment.url+"markers";
     return this.http.post<ITemparture>(`${this.URL_MAR}`,marker);
   }
 
+  queryMarker():Observable<IMarker[]>{
+    return this.http.get<IMarker[]>(`${this.URL_MAR}`);
+  }
+
+  deleteMarker(id:number):Observable<void>{
+    return this.http.delete<void>(`${this.URL_MAR}/${id}`);
+  }
+
 
 }

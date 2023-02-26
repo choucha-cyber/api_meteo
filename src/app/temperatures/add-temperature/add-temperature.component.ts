@@ -130,7 +130,6 @@ export class AddTemperatureComponent implements OnInit {
    */
 
   onChangeCity(ev: any): void {
-    console.log(ev);
     this.queryCities(ev);
 
   }
@@ -162,7 +161,7 @@ export class AddTemperatureComponent implements OnInit {
               next: () => {
                 this.temperatureService.save(t).subscribe({
                   next: () => {
-                    this.addMarker({ latitute: Number(lat), longitude: Number(lng), img: res.weather[0].icon })
+                    this.addMarker({ latitude: Number(lat), longitude: Number(lng), img: res.weather[0].icon, message: res.weather[0].main + ' ' + `(${res.weather[0].description})` })
                   },
                   error: (error: any) => {
                     console.log(error);
@@ -203,7 +202,7 @@ export class AddTemperatureComponent implements OnInit {
 
                 this.temperatureService.save(t).subscribe({
                   next: () => {
-                    this.addMarker({ latitute: Number(lat), longitude: Number(lng), img: res.weather[0].icon })
+                    this.addMarker({ latitude: Number(lat), longitude: Number(lng), img: res.weather[0].icon, message: res.weather[0].main + ' ' + `(${res.weather[0].description})` })
                   },
                   error: (error: any) => {
                     console.log(error);
@@ -233,7 +232,7 @@ export class AddTemperatureComponent implements OnInit {
 
             this.temperatureService.save(t).subscribe({
               next: () => {
-                this.addMarker({ latitute: Number(t.city?.latitude), longitude: t.city?.longitude, img: res.weather[0].icon })
+                this.addMarker({ latitude: Number(t.city?.latitude), longitude: t.city?.longitude, img: res.weather[0].icon, message: res.weather[0].main + ' ' + `(${res.weather[0].description})` })
               },
               error: (error: any) => {
                 console.log(error);
@@ -252,7 +251,7 @@ export class AddTemperatureComponent implements OnInit {
 
   addMarker(marker: IMarker): void {
     this.temperatureService.saveMarker(marker).subscribe({
-      next: (res: any) => {
+      next: () => {
         this.router.navigate(['/temperatures']);
       }
     })

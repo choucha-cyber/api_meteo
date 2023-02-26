@@ -55,6 +55,7 @@ h1 {
   padding-left: 10px;
   overflow: hidden;
   border-right: 2px solid rgba(0, 0, 0, .25);
+  background-color: #d9d3d3;
 }
 
 .map {

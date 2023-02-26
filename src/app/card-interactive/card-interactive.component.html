@@ -18,18 +18,53 @@
 <div class="map" id="map"></div> -->
 
 <div class="sidebar">
-  
+  <div class="row">
+    <div class="col-11" style="margin-top: 52px;">
+      <label class="form-label" style="font-size: 31px;">Rechercher une ville</label>
+
+      <ng-autocomplete
+      [data]="cities"
+      formControlName="city"
+      searchKeyword="cityName"
+      (inputChanged)="onChangeCity($event)"
+      (selected)="onSelected($event)"
+     
+      [debounceTime]="1000"
+      [isLoading]="isLoading"
+      [itemTemplate]="itemTemplate"
+      notFoundText="Aucune ville trouvée"
+      [notFoundTemplate]="notFoundTemplate"
+    >
+    </ng-autocomplete>
+    </div>
+  </div>
     <div class="container">
       <h1>Markers</h1>
+      <div class="my-3" >
+        <br>
    
+      
+      <ng-template #itemTemplate let-item>
+        <a href="javascript:void(0)">
+          <span [innerHTML]="item!.cityName"></span>
+        </a>
+      </ng-template>
+      <ng-template #notFoundTemplate let-notFound>
+        <div [innerHTML]="notFound"></div>
+      </ng-template>
+
+        </div>
     </div>
+
+   
+
   
     <!-- Liste des marqueurs enregistrés -->
     <div id="listings" class="listings" *ngFor="let marker of markers">
       {{ marker.properties.message }}
       <!-- Suppression d'un marqueur -->
-      <button class="btn btn-sm btn-dark"></button>
-      <button class="btn btn-sm btn-danger">Delete</button>
+      <button class="btn btn-sm btn-dark" (click)="flyTo(marker)">Voir</button>
+      <button class="btn btn-sm btn-danger" (click)="deleteMarker(marker)">Delete</button>
     </div>
   </div>
   <!-- Carte -->
