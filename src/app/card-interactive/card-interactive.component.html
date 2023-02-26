@@ -1,0 +1,37 @@
+<app-header></app-header>
+<!-- 
+
+
+<div class="container">
+
+    
+
+    <div class="row" style="margin-top: 50px;">
+        
+        <div class="col-12" >
+            zedzedzedze
+        </div>
+
+    </div>
+</div>
+
+<div class="map" id="map"></div> -->
+
+<div class="sidebar">
+  
+    <div class="container">
+      <h1>Markers</h1>
+   
+    </div>
+  
+    <!-- Liste des marqueurs enregistrés -->
+    <div id="listings" class="listings" *ngFor="let marker of markers">
+      {{ marker.properties.message }}
+      <!-- Suppression d'un marqueur -->
+      <button class="btn btn-sm btn-dark"></button>
+      <button class="btn btn-sm btn-danger">Delete</button>
+    </div>
+  </div>
+  <!-- Carte -->
+  <div id="map" class="map"></div>
+  
