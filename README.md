@@ -1,6 +1,7 @@
 # WeatherProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
+WARNING !! CHECK  THE NODE-MODULES in the Master branch
 
 ## Development server
 
