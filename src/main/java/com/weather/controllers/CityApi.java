@@ -1,17 +1,11 @@
 package com.weather.controllers;
 
+import java.time.Instant;
 import java.util.List;
 
-
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.*;
 
 import com.weather.models.City;
 import com.weather.models.Marker;
@@ -19,10 +13,6 @@ import com.weather.models.Temperature;
 import com.weather.services.CityServiceInterface;
 import com.weather.services.MarkerServiceInterface;
 import com.weather.services.TemperatureServiceInterface;
-import java.time.Instant;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -33,14 +23,6 @@ public class CityApi {
 	private final CityServiceInterface cityServiceInterface;
 	private final TemperatureServiceInterface temperatureServiceInterface;
 	private final MarkerServiceInterface markerServiceInterface;
-	
-	
-	
-//	private static final ObjectMapper objectMapper = new ObjectMapper()
-//	        .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-//	        .configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true);
-//	
-//	//objectMapper.convertValue(object, value.class);
 	
 
 	 public CityApi(CityServiceInterface cityServiceInterface, TemperatureServiceInterface temperatureServiceInterface,

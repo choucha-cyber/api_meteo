@@ -43,13 +43,16 @@ public class Marker {
 	
 	private String img;//path img
 
+	private String message;
+
 	public Marker() {}
 
-	public Marker(Double latitude, Double longitude, String img) {
+	public Marker(Double latitude, Double longitude, String img, String message) {
 		super();
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.img = img;
+		this.message = message;
 	}
 	
 	
@@ -61,12 +64,12 @@ public class Marker {
 		this.id = id;
 	}
 
-	public Double getLatitute() {
+	public Double getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitute(Double latitute) {
-		this.latitude = latitute;
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
 	}
 
 	public Double getLongitude() {
@@ -85,8 +88,16 @@ public class Marker {
 		this.img = img;
 	}
 
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
 	public void getCoords(Double lat, Double lon) {
-		setLatitute(lat);
+		setLatitude(lat);
 		setLongitude(lon);
 		
 	}

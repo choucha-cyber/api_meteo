@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.weather.models.Marker;
 
+
 public interface MarkerServiceInterface {
 	
 	List<Marker> getAll();

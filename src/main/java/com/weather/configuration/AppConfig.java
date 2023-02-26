@@ -1,7 +1,5 @@
 package com.weather.configuration;
 
-import java.util.Date;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
