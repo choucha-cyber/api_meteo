@@ -1,0 +1,127 @@
+
+<div class="container" style="margin-top: 101px">
+  <a class="btn btn-sm btn-primary" routerLink="/temperatures">retour</a>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h3>Ajouter une temparature</h3>
+        </div>
+        <div class="card-body">
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" (change)="getValue($event)" value="ville" name="option">
+            <label class="form-check-label">
+             Par nom de ville
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" (change)="getValue($event)" value="gps" name="option">
+            <label class="form-check-label">
+            Par coordonnées GPS
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio"(change)="getValue($event)" value="manuel" name="option">
+            <label class="form-check-label">
+              Manuellement
+            </label>
+          </div>
+
+
+          <div *ngIf="option==='ville'">
+            <form [formGroup]="editFormVille">
+
+
+              <div class="my-3" >
+                <label class="form-label">Selectionnez la ville</label>
+             
+                <ng-autocomplete
+                [data]="cities"
+                formControlName="city"
+                searchKeyword="cityName"
+                (inputChanged)="onChangeCity($event)"
+               
+                [debounceTime]="1000"
+                [isLoading]="isLoading"
+                [itemTemplate]="itemTemplate"
+                notFoundText="Aucune ville trouvée"
+                [notFoundTemplate]="notFoundTemplate"
+              >
+              </ng-autocomplete>
+              <ng-template #itemTemplate let-item>
+                <a href="javascript:void(0)">
+                  <span [innerHTML]="item!.cityName"></span>
+                </a>
+              </ng-template>
+              <ng-template #notFoundTemplate let-notFound>
+                <div [innerHTML]="notFound"></div>
+              </ng-template>
+
+                </div>
+             
+
+                <button class="btn btn-primary btn-sm" (click)="save()"  *ngIf="!editFormVille.invalid">Save</button>
+
+            </form>
+          </div>
+
+          
+          <div *ngIf="option==='gps'">
+            <form [formGroup]="editFormGps">
+              <div class="mb-3">
+                <label class="form-label">Longitude</label>
+                <input type="number" class="form-control"  formControlName="lng">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label">Latitude</label>
+                <input type="number" class="form-control" formControlName="lat">
+              </div>
+                <button class="btn btn-primary btn-sm" (click)="save()" *ngIf="!editFormGps.invalid">Save</button>
+            </form>
+          </div>
+
+          <div *ngIf="option==='manuel'">
+            <form [formGroup]="editFormManuel">
+              <div class="mb-3">
+                <label class="form-label">Longitude</label>
+                <input type="number" class="form-control"  formControlName="lng">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label">Latitude</label>
+                <input type="number" class="form-control" formControlName="lat">
+              </div>
+                <div class="mb-3">
+                  <label class="form-label">Temperature</label>
+                  <input type="number" class="form-control"  formControlName="value">
+                </div>
+
+                
+
+
+                <button class="btn btn-primary btn-sm" (click)="save()" *ngIf="!editFormManuel.invalid">Save</button>
+            </form>
+          </div>
+       
+       
+
+
+         
+
+           
+
+           
+           
+
+        
+
+
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

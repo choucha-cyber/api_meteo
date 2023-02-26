@@ -1,0 +1,52 @@
+
+<div class="container" style="
+margin-top: 101px;
+">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Ajouter</h3>
+                </div>
+                <div class="card-body">
+
+                    <form [formGroup]="editForm">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control"  formControlName="city">
+                          </div>
+
+                        <!-- <div class="mb-3">
+                          <label class="form-label">Longitude</label>
+                          <input type="number" class="form-control"  formControlName="lng">
+                        </div>
+            
+                        <div class="mb-3">
+                          <label class="form-label">Latitude</label>
+                          <input type="number" class="form-control" formControlName="lat">
+                        </div>
+
+                        
+                        <div class="mb-3">
+                            <label class="form-label">country</label>
+                            <input type="text" class="form-control"  formControlName="country">
+                          </div>
+                        
+                          <div class="mb-3">
+                            <label class="form-label">city Ascii</label>
+                            <input type="text" class="form-control"  formControlName="cityAscii">
+                          </div>
+
+                          <div class="mb-3">
+                            <label class="form-label">code ISO</label>
+                            <input type="text" class="form-control"  formControlName="iso2">
+                          </div> -->
+          
+          
+                          <button class="btn btn-primary btn-sm" (click)="save()" [disabled]="editForm.invalid">Save</button>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

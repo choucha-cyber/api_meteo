@@ -1,0 +1,33 @@
+
+<div class="container" style="margin-top: 101px">
+
+  <div class="row">
+    <div class="col-12">
+     
+      <a id="retour" class=" btn btn-sm btn-primary mb-2" routerLink="/temperatures">Retour</a>
+            
+        <div class="row d-flex justify-content-center align-items-center h-100" *ngIf="temperature">
+          <div class="col-md-8 col-lg-6 col-xl-4">
+    
+        
+      
+            <div class="card shadow-0 ">
+              <div class="card-body ">
+              
+                <h4 class="mb-1 sfw-normal">{{temperature.city!.cityName}}, {{temperature.city!.country}}</h4>
+                <p class="mb-2">Longitude: <strong>{{temperature!.city!.longitude}}</strong></p>
+                <p class="mb-2">Latitude: <strong>{{temperature!.city!.latitude}}</strong></p>
+                <p class="mb-2">ASCII: <strong>{{temperature!.city!.cityAscii}}</strong></p>
+                <p class="mb-2">ISO: <strong>{{temperature!.city!.iso2}}</strong></p>
+                <p class="mb-2">Temperature: <strong>{{temperature!.value}}°C</strong></p>
+                <br>
+                <app-clock [time]="temperature!.timestamp"></app-clock>
+    
+              </div>
+            </div>
+    
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

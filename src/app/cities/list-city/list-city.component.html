@@ -1,0 +1,55 @@
+
+
+<div class="container" style="
+margin-top: 101px;
+">
+<a class=" btn btn-primary mx-3" routerLink="/cities/add">Ajouter</a>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Listes des villes</h3>
+                </div>
+                <div class="card-body">
+                   
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Longitude</th>
+                            <th scope="col">Latitude</th>
+                            <th scope="col">Country</th>
+                            <th scope="col">Ascii</th>
+                            <th scope="col">Iso</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <ng-container *ngIf="data">
+                            
+                          <tr *ngFor="let c of cities | paginate :  { itemsPerPage:  req.size, currentPage:page,totalItems:data.totalElements}">
+                            <th scope="row">{{c.id}}</th>
+                            <td>{{c.cityName}}</td>
+                            <td>{{c.longitude}}</td>
+                            <td>{{c.latitude}}</td>
+                            <td>{{c.country}}</td>
+                            <td>{{c.cityAscii}}</td>
+                            <td>{{c.iso2}}</td>
+                           
+                          </tr>
+                          </ng-container>
+                          
+                        
+                       
+                        </tbody>
+                      </table>
+
+                      <pagination-controls (pageChange)="pageChanged($event)"
+                     >
+                    </pagination-controls>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</div>
