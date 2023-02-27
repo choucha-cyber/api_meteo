@@ -35,7 +35,7 @@ public class Temperature{
     private Double value;
     @Temporal(TemporalType.TIMESTAMP)
     private Date timestamp;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     @JoinColumn(name = "city_id")
     private City city;
     

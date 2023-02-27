@@ -11,25 +11,7 @@ import jakarta.persistence.Table;
 @Table(name="markers")
 public class Marker {
 
-	/*
-	 * {
-  "markers": [
-    {
-      "properties": {
-        "message": "Bonjour",
-        "image": "10d"
-      },
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.2902059219654234,
-          48.895086689110656
-        ]
-      },
-      "id": 1
-    },
-	 */
+	
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,18 +26,25 @@ public class Marker {
 	private String img;//path img
 
 	private String message;
+	
+	private String name;
 
 	public Marker() {}
 
-	public Marker(Double latitude, Double longitude, String img, String message) {
+	
+	
+	public Marker(Double latitude, Double longitude, String img, String message, String name) {
 		super();
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.img = img;
 		this.message = message;
+		this.name = name;
 	}
-	
-	
+
+
+
+
 	public Long getId() {
 		return id;
 	}
@@ -96,10 +85,18 @@ public class Marker {
 		this.message = message;
 	}
 
-	public void getCoords(Double lat, Double lon) {
-		setLatitude(lat);
-		setLongitude(lon);
-		
+
+
+	public String getName() {
+		return name;
 	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	
 	
 }
