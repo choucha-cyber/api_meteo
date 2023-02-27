@@ -6,20 +6,29 @@
     top: 0px;
   } */
 
+    img {
+      width: 8rem;
+      border-radius: 65%;
+      margin-right: 5rem;
+      opacity:0.7;
+    }
   nav {
+    
+    width: 75%;
     margin: auto;
     margin-top:2rem;
-    width:75%;
     display: flex;
     justify-content: space-around;
   }
+
+  
   nav a {
     font-size: 1.5rem;
     font-weight: bolder;
     padding: 0.8rem;
     text-decoration: none;
     margin-top: 10px;
-    margin-right: 2rem;;
+    margin-right: 6rem;;
     display: inline-block;
     background-color: #e8e8e8;
     color: #3d3d3d;

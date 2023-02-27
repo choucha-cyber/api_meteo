@@ -3,7 +3,8 @@ export interface IMarker{
     latitude?:number;
     img?:string
     longitude?:number,
-    message?:string
+    message?:string,
+    name?: string
 }
 
 export class Marker implements IMarker{
@@ -12,7 +13,8 @@ export class Marker implements IMarker{
         public latitute?:number,
         public img?:string,
         public longitude?:number,
-        public message?:string
+        public message?:string,
+        public name?: string
 
         ){}
 }

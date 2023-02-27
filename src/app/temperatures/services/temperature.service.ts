@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
 import { IMarker } from 'src/app/models/Markers';
 import { ITemparture } from 'src/app/models/Temperature';
 import { createRequestOption, Pagination } from 'src/app/utils/constant';
@@ -49,7 +50,6 @@ URL_MAR=environment.url+"markers";
   }
 
 
-
   saveMarker(marker:IMarker):Observable<ITemparture>{
     return this.http.post<ITemparture>(`${this.URL_MAR}`,marker);
   }
@@ -62,5 +62,9 @@ URL_MAR=environment.url+"markers";
     return this.http.delete<void>(`${this.URL_MAR}/${id}`);
   }
 
-
+  delete(id: number): Observable<void> {
+    //return this.http.delete<void>(${this.URL}/${id});
+    return this.http.delete<void>(`${this.URL}/${id}`);
+   
+  }
 }

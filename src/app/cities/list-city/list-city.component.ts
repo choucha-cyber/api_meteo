@@ -12,7 +12,7 @@ export class ListCityComponent implements OnInit {
   page=1;
   cities: ICity[]=[];
   req:Pagination={
-    size:20,
+    size:10,
     page:0,
     cityName:"yao"
   }

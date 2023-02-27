@@ -1,7 +1,7 @@
 import { ICity } from "./City"
 
 export interface ITemparture{
-    
+
     id?:number,
     value?:number,
     timestamp?:Date,

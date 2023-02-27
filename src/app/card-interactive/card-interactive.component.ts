@@ -108,14 +108,15 @@ export class CardInteractiveComponent implements OnInit {
 
       this.temparetureService.queryMarker().subscribe({
         next: (res: IMarker[]) => {
-          res.map(e => {
+         /* res.map(e => {
             this.markers.push(new CustomGeoJson([e.longitude!, e.latitude!], {
               message: e.message,
               image: e.img,
               id: e.id
             }))
-
-          })
+  
+          }) */
+          
           this.setMarkersApi(this.markers);
 
         }
@@ -124,10 +125,6 @@ export class CardInteractiveComponent implements OnInit {
       })
     });
   }
-
-
-
-
 
 
   createLayer() {
@@ -173,15 +170,11 @@ export class CardInteractiveComponent implements OnInit {
     this.temparetureService.getweatherByGPS(coordinates[0], coordinates[1]).subscribe({
       next: (res: any) => {
         console.log(res);
-
+        this.iconId = res.weather[0].icon;
         this.loadImage();
         this.saveTemperature(res);
-
-
-
-
-
-
+        this.markers.push(new CustomGeoJson(coordinates, {message : res.name, image:res.weather[0].icon}));
+        
 
       },
       error: () => {
@@ -214,13 +207,24 @@ export class CardInteractiveComponent implements OnInit {
               latitude: Number(res.coord.lat),
               longitude: Number(res.coord.lon),
               img: res.weather[0].icon,
-              message: res.weather[0].main + ' ' + `(${res.weather[0].description})`
+              message: res.weather[0].main + ' ' + `(${res.weather[0].description})`,
+              name: ville.cityName,
+            
             })
+           console.log("ville que je veux " + ville.cityName);
+          /*<button class="btn btn-sm btn-dark" (click)="flyTo(marker)">voir</button> */
+          
+         /* let voir: any = document.querySelector('#listings > button.btn.btn-sm.btn-dark') as HTMLInputElement;
+          if (voir !== null) {
+            voir.innerText = ville.cityName; 
+        } */
+          
+          
           },
-          error: (error: any) => {
+          /*error: (error: any) => {
             console.log(error);
 
-          }
+          }*/
         });
       },
       error: (error: any) => {
@@ -246,7 +250,8 @@ export class CardInteractiveComponent implements OnInit {
   // Ajout les images venant de la BD
   loadImageApi(_id: number, icon: string) {
     //   let url = `assets/weather-icons/${res.weather[0].icon}.png`;
-    let url = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    //let url = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    let url = `https:weather-icons.cleverapps.io/weather/icons/${this.iconId}.png`;
 
     // Vérification si l'image est déjà chargée ou non
     if (this.map.hasImage(icon)) return;
@@ -316,9 +321,10 @@ export class CardInteractiveComponent implements OnInit {
         const newMarker = new CustomGeoJson([res.longitude!, res.latitude!], {
           message: res.message,
           image: res.img,
-          id: res.id
+          id: res.id,
+          name: res.name
         });
-        this.markers.push(newMarker);
+        //this.markers.push(newMarker);
         // Ajout du marqueur sur la carte
         this.setMarkers();
         this.loadImageApi(res.id!, res.img!)
@@ -328,6 +334,7 @@ export class CardInteractiveComponent implements OnInit {
 
 
   // déplacement vers un marqueur
+  /* /* <button class="btn btn-sm btn-dark" (click)="flyTo(marker)">voir</button>  */ 
   flyTo(data: CustomGeoJson) {
     this.map.flyTo({
       center: data.geometry.coordinates,
@@ -386,7 +393,7 @@ export class CardInteractiveComponent implements OnInit {
   // permet de recuperer la ville selectionner et afficher sur la map
   onSelected(ville:ICity):void{
     this.map.flyTo({
-      center: [ville.longitude!, ville.longitude!],
+      center: [ville.longitude!, ville.latitude!],
     });
   }
 }

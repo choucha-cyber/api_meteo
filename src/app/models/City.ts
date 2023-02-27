@@ -1,6 +1,6 @@
 export interface ICity{
     id?:number,
-    cityName?:string,
+    cityName?:any,
     latitude?:number,
     longitude?:number,
     country?:string,
@@ -10,7 +10,7 @@ export interface ICity{
 export class City implements ICity{
     constructor(
      public   id?:number,
-     public  cityName?:string,
+     public  cityName?:any,
      public latitude?:number,
      public longitude?:number,
      public country?:string,

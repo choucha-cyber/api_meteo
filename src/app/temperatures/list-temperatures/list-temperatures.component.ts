@@ -16,7 +16,7 @@ export class ListTemperaturesComponent implements OnInit {
 
   page = 1;
   req: Pagination = {
-    size: 100,
+    size: 10,
     page: 0,
   };
   editForm = this.fb.group({
@@ -72,4 +72,16 @@ export class ListTemperaturesComponent implements OnInit {
     this.req!.page = this.page - 1;
     this.query();
   }
+
+deleteTemp(id: number): void {
+    this.temperatureService.delete(id).subscribe({
+      next: () => {
+        this.query(this.req);
+      },
+      error: () => {
+        console.log('Error !!');
+      },
+    });
+  }
+
 }
